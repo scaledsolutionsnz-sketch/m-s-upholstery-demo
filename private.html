@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Feedback | M S Upholstery</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0d;--red:#c8302a;--red2:#e03830}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Barlow',sans-serif;background:var(--bg);color:#fff;min-height:100vh;display:flex;flex-direction:column}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase}
+.nav-brand span{color:var(--red)}
+.nav-back{font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:none;letter-spacing:.1em;text-transform:uppercase}
+.nav-back:hover{color:#fff}
+.page-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 2rem}
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2.8rem 2.5rem;max-width:500px;width:100%}
+.eyebrow{font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.eyebrow::before{content:'';width:14px;height:1px;background:var(--red)}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:.7rem;line-height:.95}
+.sub{font-size:.9rem;color:rgba(255,255,255,.48);line-height:1.7;margin-bottom:1.8rem}
+.rating-row{display:flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:.8rem 1rem;margin-bottom:1.8rem}
+.r-stars{color:#b8962e;font-size:1.1rem}
+.r-label{font-size:.78rem;color:rgba(255,255,255,.45)}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.48rem}
+.fg input,.fg textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:5px;padding:.7rem .95rem;font-size:.92rem;color:rgba(255,255,255,.85);font-family:'Barlow',sans-serif;outline:none;transition:border .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.22)}
+.fg input:focus,.fg textarea:focus{border-color:rgba(200,48,42,.45)}
+.fg textarea{resize:vertical;min-height:110px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn{width:100%;background:var(--red);color:#fff;border:none;border-radius:4px;padding:.9rem;font-family:'Barlow',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.55rem;margin-top:.5rem;transition:background .2s}
+.btn:hover{background:var(--red2)}
+.btn .sp{display:none;width:15px;height:15px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+.btn.loading .sp{display:block}
+.btn.loading .lbl{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.success{display:none;text-align:center;padding:1rem}
+.success.show{display:block}
+.si{width:52px;height:52px;border-radius:50%;background:rgba(200,48,42,.12);border:1px solid rgba(200,48,42,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem}
+.si svg{width:22px;height:22px;stroke:var(--red);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.success h2{font-family:'Oswald',sans-serif;font-size:1.5rem;color:#fff;margin-bottom:.6rem}
+.success p{font-size:.9rem;color:rgba(255,255,255,.48);line-height:1.7;margin-bottom:1.5rem}
+.success a{font-size:.8rem;color:var(--red);text-decoration:none}
+#tmo{display:none;margin-top:.7rem;font-size:.8rem;color:rgba(255,255,255,.38);text-align:center}
+#tmo a{color:var(--red);text-decoration:none}
+footer{padding:1.5rem 6%;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.fb{font-family:'Oswald',sans-serif;font-size:.88rem;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase}
+.fb span{color:rgba(200,48,42,.5)}
+.fl a{font-size:.72rem;color:rgba(255,255,255,.25);text-decoration:none;margin-left:1.2rem}
+@media(max-width:480px){.fr{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><a href="/" class="nav-brand">M<span>.</span></a><a href="review.html" class="nav-back">&larr; Back</a></nav>
+<div class="page-wrap">
+  <div class="card">
+    <div id="success" class="success">
+      <div class="si"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+      <h2>Feedback Received</h2>
+      <p>Thank you. We read every message and take it seriously.</p>
+      <a href="/">Back to site</a>
+    </div>
+    <div id="fw">
+      <div class="eyebrow">Private Feedback</div>
+      <h1>Tell Us What Happened</h1>
+      <p class="sub">This goes directly to the team, not publicly. We appreciate you taking the time.</p>
+      <div class="rating-row"><span class="r-stars" id="rs">&#9733;</span><span class="r-label" id="rl">1 star</span></div>
+      <form id="pf" action="https://formsubmit.co/kmsinclair@xtra.co.nz" method="POST">
+        <input type="hidden" name="_subject" value="Private Feedback — M S Upholstery">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="nf" value="https://m-s-upholstery-demo.vercel.app/private.html?sent=1">
+        <input type="hidden" name="rating" id="ri" value="1">
+        <div class="fr">
+          <div class="fg"><label>Name</label><input type="text" name="name" placeholder="Optional"></div>
+          <div class="fg"><label>Email</label><input type="email" name="email" placeholder="Optional"></div>
+        </div>
+        <div class="fg"><label>Feedback</label><textarea name="feedback" placeholder="What could we have done better?" required></textarea></div>
+        <p id="tmo">Taking a while? <a href="mailto:kmsinclair@xtra.co.nz">Email us</a> or call <a href="tel:033654470">03 365 4470</a>.</p>
+        <button type="submit" class="btn" id="sb"><span class="sp"></span><span class="lbl">Send Feedback</span></button>
+      </form>
+    </div>
+  </div>
+</div>
+<footer><div class="fb">M<span>.</span></div><div class="fl"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div></footer>
+<script>
+var p=new URLSearchParams(window.location.search);
+var r=parseInt(p.get('rating'))||1;
+var sm={'1':'&#9733;','2':'&#9733;&#9733;','3':'&#9733;&#9733;&#9733;','4':'&#9733;&#9733;&#9733;&#9733;','5':'&#9733;&#9733;&#9733;&#9733;&#9733;'};
+var lm={'1':'1 star','2':'2 stars','3':'3 stars','4':'4 stars','5':'5 stars'};
+document.getElementById('rs').innerHTML=sm[r]||sm[1];
+document.getElementById('rl').textContent=lm[r]||lm[1];
+document.getElementById('ri').value=r;
+document.getElementById('nf').value='https://m-s-upholstery-demo.vercel.app/private.html?sent=1&rating='+r;
+if(p.get('sent')==='1'){document.getElementById('fw').style.display='none';document.getElementById('success').classList.add('show')}
+var f=document.getElementById('pf'),btn=document.getElementById('sb');
+f.addEventListener('submit',function(){btn.classList.add('loading');btn.disabled=true;setTimeout(function(){btn.classList.remove('loading');btn.disabled=false;btn.querySelector('.lbl').textContent='Send Feedback';document.getElementById('tmo').style.display='block'},20000)});
+</script>
+</body>
+</html>

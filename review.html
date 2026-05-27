@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave a Review | M S Upholstery</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0d;--red:#c8302a;--red2:#e03830}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Barlow',sans-serif;background:var(--bg);color:#fff;min-height:100vh;display:flex;flex-direction:column}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase}
+.nav-brand span{color:var(--red)}
+.nav-back{font-size:.72rem;color:rgba(255,255,255,.45);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-back:hover{color:#fff}
+.page-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 2rem}
+.review-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:3rem 2.5rem;max-width:520px;width:100%;text-align:center}
+.eyebrow{font-size:.62rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:1.4rem}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#fff;margin-bottom:.85rem;line-height:.95}
+.subtitle{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:2.5rem}
+.stars-row{display:flex;justify-content:center;gap:.6rem;margin-bottom:2.5rem}
+.star-btn{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);cursor:pointer;font-size:1.8rem;display:flex;align-items:center;justify-content:center;transition:all .2s;color:rgba(255,255,255,.25);position:relative}
+.star-btn:hover,.star-btn.active{background:rgba(184,150,46,.12);border-color:rgba(184,150,46,.4);color:#b8962e;transform:scale(1.08)}
+.star-btn .num{position:absolute;bottom:5px;right:7px;font-size:.55rem;font-weight:600;opacity:.5}
+.divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin:2rem 0}
+.route-info{font-size:.8rem;color:rgba(255,255,255,.32);line-height:1.7}
+.route-info strong{color:rgba(255,255,255,.55)}
+footer{padding:1.5rem 6%;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.fb{font-family:'Oswald',sans-serif;font-size:.88rem;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase}
+.fb span{color:rgba(200,48,42,.5)}
+.fl a{font-size:.72rem;color:rgba(255,255,255,.25);text-decoration:none;margin-left:1.2rem;transition:color .2s}
+.fl a:hover{color:rgba(255,255,255,.5)}
+</style>
+</head>
+<body>
+<nav><a href="/" class="nav-brand">M<span>.</span>S Upholstery</a><a href="/" class="nav-back">&larr; Back</a></nav>
+<div class="page-wrap">
+  <div class="review-card">
+    <div class="eyebrow">Your Feedback</div>
+    <h1>HOW DID WE DO?</h1>
+    <p class="subtitle">Tap a star to rate your experience with M S Upholstery.</p>
+    <div class="stars-row">
+      <button class="star-btn" onclick="pick(1)">&#9733;<span class="num">1</span></button>
+      <button class="star-btn" onclick="pick(2)">&#9733;<span class="num">2</span></button>
+      <button class="star-btn" onclick="pick(3)">&#9733;<span class="num">3</span></button>
+      <button class="star-btn" onclick="pick(4)">&#9733;<span class="num">4</span></button>
+      <button class="star-btn" onclick="pick(5)">&#9733;<span class="num">5</span></button>
+    </div>
+    <hr class="divider">
+    <p class="route-info"><strong>1-3 stars</strong> &mdash; we'll collect your feedback privately.<br><strong>4-5 stars</strong> &mdash; we'd love it on Google.</p>
+  </div>
+</div>
+<footer><div class="fb">M<span>.</span></div><div class="fl"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div></footer>
+<script>
+function pick(n){
+  document.querySelectorAll('.star-btn').forEach(function(b,i){b.classList.toggle('active',i<n)});
+  setTimeout(function(){window.location.href=n<=3?'private.html?rating='+n:'https://g.page/r/PLACEHOLDER/review'},350);
+}
+</script>
+</body>
+</html>
